@@ -1,0 +1,148 @@
+.header {
+    height: 56px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.logo {
+    height: 56px;
+    width: 100px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.logoImage {
+    width: 100%;
+    height: 100%;
+}
+
+.nav {
+    width: 960px;
+    height: 100%;
+    margin: 0px auto;
+    padding-right: 70px;
+}
+
+.NavItem {
+    line-height: 56px;
+    padding: 0px 15px;
+    font-size: 17px;
+}
+
+.navHome {
+    float: left;
+    color: #ea6f5a;
+}
+
+.navApp {
+    float: left;
+    color: #333333;
+}
+
+.navLogin {
+    float: right;
+    color: #969696;
+}
+
+.navAa {
+    float: right;
+    color: #969696;
+}
+
+.navSearch {
+    float: left;
+    position: relative;
+}
+.search {
+    width: 160px;
+    height: 38px;
+    border: none;
+    outline: none;
+    border-radius: 19px;
+    background: #eeeeee;
+    margin-top: 9px;
+    padding: 0 40px 0 20px;
+    font-size: 14px;
+    margin-left: 20px;
+    color: #777777;
+}
+
+.searchFocus {
+    width: 260px;
+    height: 38px;
+    border: none;
+    outline: none;
+    border-radius: 19px;
+    background: #eeeeee;
+    margin-top: 9px;
+    padding: 0 40px 0 20px;
+    font-size: 14px;
+    margin-left: 20px;
+    color: #777777;
+}
+
+
+::placeholder {
+    color: #999999;
+}
+
+.addition {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 56px;
+}
+
+.button {
+    float: right;
+    line-height: 38px;
+    border-radius: 19px;
+    margin-top: 9px;
+    border: 1px solid #ec6149;
+    margin-right: 20px;
+    padding: 0px 20px;
+}
+
+.register {
+    color: #ec6149;
+}
+
+.written {
+    color: #ffffff;
+    background: #ec6149;
+}
+
+.aaImage {
+    height: 56px;
+    width: 60px;
+    padding: 0px 18px;
+    display: block;
+}
+
+.penImage {
+    height: 38px;
+    width: 60px;
+    padding: 0px 18px;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.magnifierImage {
+    height: 30px;
+    width: 30px;
+    border-radius: 15px;
+    background: red;
+    padding: 5px;
+    display: inline-block;
+    vertical-align: bottom;
+    position: absolute;
+    top: 13px;
+    right: 4px;
+    text-align: center;
+}
+
+
+
+
