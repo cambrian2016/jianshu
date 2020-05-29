@@ -1,9 +1,10 @@
 import React from 'react';
-import './style.css';
+import style from './index.module.css'
+import './test.css'
 
 function App() {
   return (
-    <div>
+    <div className={style.dell}>
       <p>Hello World</p>
     </div>
   );
