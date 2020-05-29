@@ -117,14 +117,14 @@
 .aaImage {
     height: 56px;
     width: 60px;
-    padding: 0px 18px;
+    padding: 15px 18px;
     display: block;
 }
 
 .penImage {
     height: 38px;
     width: 60px;
-    padding: 0px 18px;
+    padding: 2px 18px;
     display: inline-block;
     vertical-align: bottom;
 }
