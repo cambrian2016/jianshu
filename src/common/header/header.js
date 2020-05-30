@@ -28,9 +28,9 @@ class Header extends Component {
                     </div>
                     <div>
                         {
-                            this.props.list.map((item) => (
+                            this.props.list.map((item) =>
                                 <a className={style.searchInfoItem} key={item}>{item}</a>
-                            ))
+                            )
                         }
                     </div>
                 </div>
