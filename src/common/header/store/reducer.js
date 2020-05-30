@@ -1,7 +1,8 @@
 import * as actionTypes from "./actionTypes"
 
 const defaultState = {
-    focused: false
+    focused: false,
+    list:[]
 };
 
 export default (state = defaultState, action) => {
@@ -17,5 +18,10 @@ export default (state = defaultState, action) => {
         return stateNew;
     }
 
+    if (action.type===actionTypes.CHANGE_LIST){
+        let stateNew = JSON.parse(JSON.stringify(state));
+        stateNew.list=action.value;
+        return stateNew;
+    }
     return state;
 }

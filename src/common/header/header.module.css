@@ -55,6 +55,7 @@
     float: left;
     position: relative;
 }
+
 .search {
     width: 160px;
     height: 38px;
@@ -86,6 +87,42 @@
 
 ::placeholder {
     color: #999999;
+}
+
+.searchInfo {
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 300px;
+    padding: 0 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.searchInfoTitle {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    line-height: 20px;
+    font-size: 14px;
+    color: #969696;
+}
+
+.searchInfoTitleSwitch {
+    float: right;
+    font-size: 13px;
+}
+
+
+.searchInfoItem {
+    font-size: 12px;
+    padding: 0px 5px;
+    line-height: 20px;
+    border: 1px solid #dddddd;
+    color: #787878;
+    border-radius: 2px;
+    display: block;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 .addition {
