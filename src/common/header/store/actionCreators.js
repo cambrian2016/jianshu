@@ -4,7 +4,9 @@ import axios from 'axios';
 
 const changeList=(data)=>({
     type: actionTypes.CHANGE_LIST,
-    value:data
+    value:data,
+    page:1,
+    totalPage:Math.ceil(data.length/10)
 });
 
 
@@ -28,3 +30,14 @@ export const getList = () => {
     }
 }
 
+export const changeSearchInfoAction = () => ({
+    type: actionTypes.CHANGE_SEARCH_INFO
+})
+
+export const mouseEnterAction = () => ({
+    type: actionTypes.MOUSE_ENTER
+})
+
+export const mouseLeaveAction = () => ({
+    type: actionTypes.MOUSE_LEAVE
+})

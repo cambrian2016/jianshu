@@ -3,10 +3,12 @@ import {connect} from "react-redux";
 import * as actionCreators from "./store/actionCreators";
 
 import style from './header.module.css'
+
 import logo from '../../statics/logo.png'
 import Aa from '../../statics/Aa.png'
 import Magnifier from '../../statics/magnifier.png'
 import Pen from '../../statics/pen.png'
+import spin from '../../statics/spin.png'
 
 
 class Header extends Component {
@@ -19,16 +21,25 @@ class Header extends Component {
 
 
     getSearchInfo() {
-        if (this.props.focused) {
+        let searchInfoItemTemp = [];
+        for (let i = (this.props.page - 1) * 10; (i < (this.props.page - 1) * 10 + 10) && (i < this.props.list.length); i++) {
+            searchInfoItemTemp.push(this.props.list[i]);
+        }
+
+        if (this.props.focused || this.props.mouseIn) {
             return (
-                <div className={style.searchInfo}>
+                <div className={style.searchInfo}
+                     onMouseEnter={this.props.handleMouseEnter}
+                     onMouseLeave={this.props.handleMouseLeave}>
                     <div className={style.searchInfoTitle}>
                         热门搜索
-                        <span className={style.searchInfoTitleSwitch}>换一批</span>
+                        <span className={style.searchInfoTitleSwitch}
+                              onClick={this.props.handleChangeSearchInfo}>换一批</span>
+                        <div className={style.spinDiv}><img className={style.spinImg} src={spin}/></div>
                     </div>
                     <div>
                         {
-                            this.props.list.map((item) =>
+                            searchInfoItemTemp.map((item) =>
                                 <a className={style.searchInfoItem} key={item}>{item}</a>
                             )
                         }
@@ -53,8 +64,10 @@ class Header extends Component {
                     </div>
                     <div className={style.navSearch}>
 
-                        <input className={this.props.focused ? style.searchFocus : style.search} placeholder="搜索"
-                               onFocus={this.props.handleInputFocus} onBlur={this.props.handleInputBlur}/>
+                        <input className={(this.props.focused || this.props.mouseIn) ? style.searchFocus : style.search}
+                               placeholder="搜索"
+                               onFocus={this.props.handleInputFocus.bind(this, this.props.list)}
+                               onBlur={this.props.handleInputBlur}/>
                         <img src={Magnifier} className={style.magnifierImage} alt="logo"/>
 
                         {this.getSearchInfo()}
@@ -78,18 +91,34 @@ class Header extends Component {
 const mapStateToProps = (state) => {
     return {
         focused: state.header.focused,
-        list: state.header.list
+        mouseIn: state.header.mouseIn,
+        list: state.header.list,
+        page: state.header.page,
+        totalPage: state.header.totalPage
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleInputFocus() {
+        handleInputFocus(list) {
             dispatch(actionCreators.searchFocusAction());
-            dispatch(actionCreators.getList());
+            if (list.length === 0) {
+                dispatch(actionCreators.getList());
+            }
+            console.log(list);
+
         },
         handleInputBlur() {
             dispatch(actionCreators.searchBlurAction());
+        },
+        handleChangeSearchInfo() {
+            dispatch(actionCreators.changeSearchInfoAction());
+        },
+        handleMouseEnter() {
+            dispatch(actionCreators.mouseEnterAction());
+        },
+        handleMouseLeave() {
+            dispatch(actionCreators.mouseLeaveAction());
         }
 
     }
