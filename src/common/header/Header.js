@@ -5,7 +5,7 @@ import * as actionCreators from "./store/actionCreators";
 import style from './header.module.css'
 
 import logo from '../../statics/logo.png'
-import Aa from '../../statics/Aa.png'
+import Aa from '../../statics/aa.png'
 import Magnifier from '../../statics/magnifier.png'
 import Pen from '../../statics/pen.png'
 import spin from '../../statics/spin.png'

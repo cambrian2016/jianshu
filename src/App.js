@@ -1,10 +1,10 @@
 import React from 'react';
 import {Provider} from 'react-redux';
-import Header from "./common/header/header";
+import Header from "./common/header/Header";
 import store from "./store";
 import {BrowserRouter, HashRouter} from "react-router-dom";
 import {Route} from "react-router"
-import Home from "./pages/home/home";
+import Home from "./pages/home/Home";
 import Detail from "./pages/detail/detail";
 
 function App() {
