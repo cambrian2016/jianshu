@@ -6,21 +6,13 @@ import {connect} from "react-redux";
 
 class Topic extends Component {
 
-    constructor(props) {
-        super(props);
-
-    }
-
-
     componentDidMount() {
-
+        this.props.handleGetTopicList();
     }
-
 
     render() {
         return (
             <div className={style.topic}>
-                <div onClick={this.props.handleGetTopicList}>this is a button</div>
                 {
                     this.props.list.map((item) => {
                         return (
@@ -46,10 +38,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         handleGetTopicList() {
-            console.log("handleGetTopicList1")
-            dispatch(actionCreators.getTopicList);
-            console.log("handleGetTopicList12")
-
+            dispatch(actionCreators.getTopicList());
         }
     };
 };

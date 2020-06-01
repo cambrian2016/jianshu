@@ -7,8 +7,9 @@ const getTopicListAction = (data) => ({
 })
 
 export const getTopicList = () => {
+    console.log("getTopicList");
     return (dispatch) => {
-        Axios.get("/api/headerList.json").then((response) => {
+        Axios.get("/api/articleList.json").then((response) => {
             const data = response.data;
             console.log(data);
             dispatch(getTopicListAction(data.data));
@@ -17,4 +18,6 @@ export const getTopicList = () => {
         });
     }
 }
+
+
 
