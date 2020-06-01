@@ -3,6 +3,7 @@
     overflow: hidden;
     padding: 20px 0px 10px 0px;
     margin-left: -18px;
+    border-bottom: 1px solid #dcdcdc;
 }
 
 .topicItem {
