@@ -1,15 +1,19 @@
 import React, {Component} from "react";
 import style from "./list.module.css"
 import {connect} from "react-redux";
+import * as actionCreators from "../store/actionCreators";
 
 class List extends Component {
+
+    componentDidMount() {
+        this.props.handleGetTopicList();
+    }
 
     render() {
         return (
             <div>
                 {
-                    this.props.list.map(
-                        (item) => {
+                    this.props.list.map((item) => {
                             return (
                                 <div className={style.listItem} key={item.title}>
                                     <div className={style.listInfo}>
@@ -39,7 +43,11 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return null;
+    return {
+        handleGetTopicList() {
+            dispatch(actionCreators.getArticleList());
+        }
+    };
 };
 
-export default connect(mapStateToProps, null)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(List);

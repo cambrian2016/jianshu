@@ -6,12 +6,17 @@ const getTopicListAction = (data) => ({
     value: data.topicList
 })
 
+const getArticleListAction = (data) => ({
+    type: actionTypes.GET_ARTICLE_LIST,
+    value: data.articleList
+})
+
+
 export const getTopicList = () => {
     console.log("getTopicList");
     return (dispatch) => {
-        Axios.get("/api/articleList.json").then((response) => {
+        Axios.get("/api/topicList.json").then((response) => {
             const data = response.data;
-            console.log(data);
             dispatch(getTopicListAction(data.data));
         }).catch(() => {
             console.log("error");
@@ -20,4 +25,16 @@ export const getTopicList = () => {
 }
 
 
+export const getArticleList = () => {
+    console.log("getTopicList");
+    return (dispatch) => {
+        Axios.get("/api/articleList.json").then((response) => {
+            const data = response.data;
+            console.log(data);
+            dispatch(getArticleListAction(data.data));
+        }).catch(() => {
+            console.log("error");
+        });
+    }
+}
 
