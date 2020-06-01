@@ -1,5 +1,5 @@
 import * as actionTypes from "./actionTypes";
-import axios from 'axios';
+import Axios from "axios";
 
 
 const changeList=(data)=>({
@@ -20,7 +20,7 @@ export const searchBlurAction = () => ({
 
 export const getList = () => {
     return (dispatch) => {
-        axios.get("/api/headerList.json").then((response) => {
+        Axios.get("/api/headerList.json").then((response) => {
             const data = response.data;
 
             dispatch(changeList(data.data));

@@ -105,8 +105,6 @@ const mapDispatchToProps = (dispatch) => {
             if (list.length === 0) {
                 dispatch(actionCreators.getList());
             }
-            console.log(list);
-
         },
         handleInputBlur() {
             dispatch(actionCreators.searchBlurAction());
