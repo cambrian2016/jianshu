@@ -16,6 +16,11 @@ const getRecommendListAction = (data) => ({
     value: data.recommendList
 })
 
+const getLoadMoreListAction = (data) => ({
+    type: actionTypes.GET_LOAD_MORE_LIST,
+    value: data.loadMoreList
+})
+
 
 export const getTopicList = () => {
     return (dispatch) => {
@@ -46,6 +51,18 @@ export const getRecommendList = () => {
             const data = response.data;
             console.log(data);
             dispatch(getRecommendListAction(data.data));
+        }).catch(() => {
+            console.log("error");
+        });
+    }
+}
+
+export const getLoadMoreList = () => {
+    return (dispatch) => {
+        Axios.get("/api/loadMoreList.json").then((response) => {
+            const data = response.data;
+            console.log(data);
+            dispatch(getLoadMoreListAction(data.data));
         }).catch(() => {
             console.log("error");
         });

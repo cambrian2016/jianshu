@@ -30,6 +30,7 @@ class List extends Component {
                         }
                     )
                 }
+                <div className={style.loadMore} onClick={this.props.handleLoadMore}>更多文章</div>
             </div>
 
         );
@@ -46,6 +47,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         handleGetTopicList() {
             dispatch(actionCreators.getArticleList());
+        },
+        handleLoadMore(){
+            dispatch(actionCreators.getLoadMoreList());
         }
     };
 };

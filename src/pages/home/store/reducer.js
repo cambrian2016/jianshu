@@ -4,6 +4,7 @@ const defaultState = {
     topicList: [],
     articleList: [],
     recommendList: [],
+    loadMoreList: [],
 };
 
 export default (state = defaultState, action) => {
@@ -20,6 +21,11 @@ export default (state = defaultState, action) => {
 
         case actionTypes.GET_RECOMMEND_LIST:
             stateNew.recommendList = action.value;
+            break
+
+        case actionTypes.GET_LOAD_MORE_LIST:
+            let loadMoreList = action.value;
+            stateNew.articleList=stateNew.articleList.concat(loadMoreList);
             break
         default:
             break
