@@ -69,3 +69,8 @@ export const getLoadMoreList = () => {
     }
 }
 
+
+export const getChangeShowBackTopAction = (changeShowBackTop) => ({
+    type: actionTypes.CHANGE_SHOW_BACK_TOP,
+    value: changeShowBackTop
+})

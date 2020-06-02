@@ -12,17 +12,31 @@ import {connect} from "react-redux";
 
 class Home extends Component {
 
+    constructor(props) {
+        super(props);
+
+        this.windowScroll=this.windowScroll.bind(this);
+    }
+
 
     handleBackTop() {
         window.scrollTo(0, 0);
     }
 
     componentDidMount() {
-        this.bindEvents();
+        window.addEventListener("scroll", this.windowScroll);
     }
 
-    bindEvents() {
-        window.addEventListener("scroll", this.props.windowScroll());
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.windowScroll);
+    }
+
+    windowScroll() {
+        if (this.props.showBackTopBoolean && (document.documentElement.scrollTop < 400)) {
+            this.props.changeShowBackTop(false);
+        } else if ((!this.props.showBackTopBoolean) && (document.documentElement.scrollTop > 400)) {
+            this.props.changeShowBackTop(true);
+        }
     }
 
 
@@ -57,10 +71,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        windowScroll(event) {
-            console.log("aa");
-        },
-
+        changeShowBackTop(showBoolean) {
+            dispatch(actionCreators.getChangeShowBackTopAction(showBoolean));
+        }
     };
 };
 

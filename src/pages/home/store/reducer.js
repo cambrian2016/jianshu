@@ -28,6 +28,10 @@ export default (state = defaultState, action) => {
             let loadMoreList = action.value;
             stateNew.articleList = stateNew.articleList.concat(loadMoreList);
             break
+
+        case actionTypes.CHANGE_SHOW_BACK_TOP:
+            stateNew.showBackTopBoolean = action.value;
+            break
         default:
             break
     }
