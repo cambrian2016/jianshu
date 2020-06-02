@@ -9,6 +9,7 @@ import Aa from '../../statics/aa.png'
 import Magnifier from '../../statics/magnifier.png'
 import Pen from '../../statics/pen.png'
 import spin from '../../statics/spin.png'
+import {Link} from "react-router-dom";
 
 
 class Header extends Component {
@@ -54,7 +55,12 @@ class Header extends Component {
     render() {
         return (
             <div className={style.header}>
-                <a className={style.logo} href={"/"}><img src={logo} className={style.logoImage} alt="logo"/></a>
+                <Link to={"/"}>
+                    <div className={style.logo}>
+                        <img src={logo} className={style.logoImage} alt="logo"/>
+                    </div>
+                </Link>
+
                 <div className={style.nav}>
                     <div className={style.navHome + " " + style.NavItem}>首页</div>
                     <div className={style.navApp + " " + style.NavItem}>下载App</div>

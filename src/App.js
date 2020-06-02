@@ -2,24 +2,20 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import Header from "./common/header/Header";
 import store from "./store";
-import {BrowserRouter, HashRouter} from "react-router-dom";
-import {Route} from "react-router"
+import {BrowserRouter, Route} from "react-router-dom";
 import Home from "./pages/home/Home";
 import Detail from "./pages/detail/detail";
 
 function App() {
     return (
         <Provider store={store}>
-            <div>
-                <Header/>
-                <BrowserRouter>
-                    <div>
-                        <Route path="/home" exact render={() => <Home/>}></Route>
-                        <Route path="/detail" exact render={() => <Detail/>}></Route>
-                    </div>
-                </BrowserRouter>
-            </div>
-
+            <BrowserRouter>
+                <div>
+                    <Header/>
+                    <Route path="/" exact render={() => <Home/>}></Route>
+                    <Route path="/detail" exact render={() => <Detail/>}></Route>
+                </div>
+            </BrowserRouter>
         </Provider>
     );
 }

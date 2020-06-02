@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import style from "./list.module.css"
 import {connect} from "react-redux";
 import * as actionCreators from "../store/actionCreators";
+import {Link} from "react-router-dom";
 
 class List extends Component {
 
@@ -15,16 +16,18 @@ class List extends Component {
                 {
                     this.props.list.map((item) => {
                             return (
-                                <div className={style.listItem} key={item.title}>
-                                    <div className={style.listInfo}>
-                                        <div className={style.listTitle}> {item.title}</div>
-                                        <div className={style.listContent}>
-                                            {item.content}
+                                <Link to={"/detail"} key={item.title}>
+                                    <div className={style.listItem}>
+                                        <div className={style.listInfo}>
+                                            <div className={style.listTitle}> {item.title}</div>
+                                            <div className={style.listContent}>
+                                                {item.content}
+                                            </div>
                                         </div>
+                                        <img className={style.listImage} src={item.imageUrl}
+                                             alt={"logo"}/>
                                     </div>
-                                    <img className={style.listImage} src={item.imageUrl}
-                                         alt={"logo"}/>
-                                </div>
+                                </Link>
                             );
 
                         }
@@ -48,7 +51,7 @@ const mapDispatchToProps = (dispatch) => {
         handleGetTopicList() {
             dispatch(actionCreators.getArticleList());
         },
-        handleLoadMore(){
+        handleLoadMore() {
             dispatch(actionCreators.getLoadMoreList());
         }
     };
