@@ -1,0 +1,23 @@
+{
+  "success": true,
+  "data": {
+    "recommendList": [
+      {
+        "id": 1,
+        "imageUrl": "http://www.sanguosha.com/uploads/201610/58106634abc34.png"
+      },
+      {
+        "id": 2,
+        "imageUrl": "http://www.sanguosha.com/uploads/201610/58106c4f121c7.png"
+      },
+      {
+        "id": 3,
+        "imageUrl": "http://www.sanguosha.com/uploads/201610/581064b88644d.png"
+      },
+      {
+        "id": 4,
+        "imageUrl": "http://www.sanguosha.com/uploads/201610/5810562163875.png"
+      }
+    ]
+  }
+}

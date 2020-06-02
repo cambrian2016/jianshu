@@ -11,9 +11,13 @@ const getArticleListAction = (data) => ({
     value: data.articleList
 })
 
+const getRecommendListAction = (data) => ({
+    type: actionTypes.GET_RECOMMEND_LIST,
+    value: data.recommendList
+})
+
 
 export const getTopicList = () => {
-    console.log("getTopicList");
     return (dispatch) => {
         Axios.get("/api/topicList.json").then((response) => {
             const data = response.data;
@@ -26,12 +30,22 @@ export const getTopicList = () => {
 
 
 export const getArticleList = () => {
-    console.log("getTopicList");
     return (dispatch) => {
         Axios.get("/api/articleList.json").then((response) => {
             const data = response.data;
-            console.log(data);
             dispatch(getArticleListAction(data.data));
+        }).catch(() => {
+            console.log("error");
+        });
+    }
+}
+
+export const getRecommendList = () => {
+    return (dispatch) => {
+        Axios.get("/api/recommendList.json").then((response) => {
+            const data = response.data;
+            console.log(data);
+            dispatch(getRecommendListAction(data.data));
         }).catch(() => {
             console.log("error");
         });

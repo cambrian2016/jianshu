@@ -1,0 +1,15 @@
+
+.recommendWrapper{
+    margin: 30px 0;
+    width: 280px;
+}
+
+.recommendItem{
+    width: 280px;
+    height: 50px;
+}
+
+.recommendImage{
+    width: 280px;
+    height: 50px;
+}
