@@ -5,6 +5,7 @@ const defaultState = {
     articleList: [],
     recommendList: [],
     loadMoreList: [],
+    showBackTopBoolean: true
 };
 
 export default (state = defaultState, action) => {
@@ -25,7 +26,7 @@ export default (state = defaultState, action) => {
 
         case actionTypes.GET_LOAD_MORE_LIST:
             let loadMoreList = action.value;
-            stateNew.articleList=stateNew.articleList.concat(loadMoreList);
+            stateNew.articleList = stateNew.articleList.concat(loadMoreList);
             break
         default:
             break

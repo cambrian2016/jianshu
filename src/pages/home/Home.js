@@ -7,8 +7,24 @@ import Recommend from "./components/Recommend";
 import Writer from "./components/Writer";
 
 import homeBanner from "../../statics/banner.png"
+import * as actionCreators from "./store/actionCreators";
+import {connect} from "react-redux";
 
 class Home extends Component {
+
+
+    handleBackTop() {
+        window.scrollTo(0, 0);
+    }
+
+    componentDidMount() {
+        this.bindEvents();
+    }
+
+    bindEvents() {
+        window.addEventListener("scroll", this.props.windowScroll());
+    }
+
 
     render() {
         return (
@@ -22,13 +38,33 @@ class Home extends Component {
                     <Recommend/>
                     <Writer/>
                 </div>
+                {
+                    this.props.showBackTopBoolean ?
+                        <div className={style.backTop} onClick={this.handleBackTop}>顶部</div> : null
+                }
+
             </div>
         );
     }
 }
 
-export default Home;
 
+const mapStateToProps = (state) => {
+    return {
+        showBackTopBoolean: state.home.showBackTopBoolean
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        windowScroll(event) {
+            console.log("aa");
+        },
+
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 
 
