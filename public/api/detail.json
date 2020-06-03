@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "data": {
+    "title": "用一个通俗易懂的实战案例，彻底搞懂单例模式22 ",
+    "content": "<img src='http://www.sanguosha.com/uploads/201611/58195a10bffbf.png'/><p>熟悉的vim的同学大多都用过的一个配色Gruvbox，整体给人感觉沉稳、清晰，对眼睛也十分友好，没有过于暗或者亮的地方，也不花里胡哨。正重要的是，微微泛黄，在晚上看起来也很舒服。22</p><p>除了vim之外，我其实有一半的时间都在jetbrains的IDE里干活，比如IntelliJ IDEA 和 DataGrip，在2019.1版本之后，jetbrains也全家桶支持自定义主题了，但是一直到今天其实都没有找到用起来舒服的 配色，有几款喜欢的也都是这里或者那里不太舒服，所以决定自己打造一款基于gruvbox的主题配色。22</p><p>除了Java配色之外，还花了些时间调整了下其他和Jvm方言和前端技术栈语言的配色，比如这些： JSX & Javascript22</p>"
+  }
+}
