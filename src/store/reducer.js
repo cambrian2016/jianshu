@@ -11,6 +11,6 @@ const reducer = combineReducers({
     home: homeReducer,
     detail: detailReducer,
     login:loginReducer
-})
+});
 
 export default reducer;

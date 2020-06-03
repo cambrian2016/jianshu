@@ -14,24 +14,24 @@ export default (state = defaultState, action) => {
     switch (action.type) {
         case actionTypes.GET_TOPIC_LIST:
             stateNew.topicList = action.value;
-            break
+            break;
 
         case actionTypes.GET_ARTICLE_LIST:
             stateNew.articleList = action.value;
-            break
+            break;
 
         case actionTypes.GET_RECOMMEND_LIST:
             stateNew.recommendList = action.value;
-            break
+            break;
 
         case actionTypes.GET_LOAD_MORE_LIST:
             let loadMoreList = action.value;
             stateNew.articleList = stateNew.articleList.concat(loadMoreList);
-            break
+            break;
 
         case actionTypes.CHANGE_SHOW_BACK_TOP:
             stateNew.showBackTopBoolean = action.value;
-            break
+            break;
         default:
             break
     }

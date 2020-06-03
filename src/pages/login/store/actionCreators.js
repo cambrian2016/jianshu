@@ -4,16 +4,16 @@ import Axios from "axios";
 export const changeUserNameAction = (value) => ({
     type: actionTypes.CHANGE_USER_NAME,
     value: value
-})
+});
 
 export const changePasswordAction = (value) => ({
     type: actionTypes.CHANGE_PASSWORD,
     value: value
-})
+});
 
 export const loginSuccessAction = () => ({
     type: actionTypes.LOGIN_SUCCESS,
-})
+});
 
 export const login = (userName, password) => {
     return (dispatch) => {
@@ -29,10 +29,10 @@ export const login = (userName, password) => {
             console.log("error");
         });
     }
-}
+};
 
 export const signOutAction = () => ({
     type: actionTypes.SIGN_OUT,
-})
+});
 
 

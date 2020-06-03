@@ -4,7 +4,7 @@ import Axios from "axios";
 const getDetailAction = (data) => ({
     type: actionTypes.GET_DETAIL,
     value: data
-})
+});
 
 export const getDetail = (id) => {
     return (dispatch) => {
@@ -15,4 +15,4 @@ export const getDetail = (id) => {
             console.log("error");
         });
     }
-}
+};

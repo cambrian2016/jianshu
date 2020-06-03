@@ -13,7 +13,7 @@ export default (state = defaultState, action) => {
     switch (action.type) {
         case actionTypes.GET_DETAIL:
             stateNew.detail = action.value;
-            break
+            break;
 
         default:
             break

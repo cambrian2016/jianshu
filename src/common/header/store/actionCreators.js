@@ -12,11 +12,11 @@ const changeList=(data)=>({
 
 export const searchFocusAction = () => ({
     type: actionTypes.SEARCH_FOCUSED
-})
+});
 
 export const searchBlurAction = () => ({
     type: actionTypes.SEARCH_BLUR
-})
+});
 
 export const getList = () => {
     return (dispatch) => {
@@ -28,16 +28,16 @@ export const getList = () => {
             console.log("error");
         });
     }
-}
+};
 
 export const changeSearchInfoAction = () => ({
     type: actionTypes.CHANGE_SEARCH_INFO
-})
+});
 
 export const mouseEnterAction = () => ({
     type: actionTypes.MOUSE_ENTER
-})
+});
 
 export const mouseLeaveAction = () => ({
     type: actionTypes.MOUSE_LEAVE
-})
+});

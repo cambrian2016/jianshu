@@ -4,22 +4,22 @@ import Axios from "axios";
 const getTopicListAction = (data) => ({
     type: actionTypes.GET_TOPIC_LIST,
     value: data.topicList
-})
+});
 
 const getArticleListAction = (data) => ({
     type: actionTypes.GET_ARTICLE_LIST,
     value: data.articleList
-})
+});
 
 const getRecommendListAction = (data) => ({
     type: actionTypes.GET_RECOMMEND_LIST,
     value: data.recommendList
-})
+});
 
 const getLoadMoreListAction = (data) => ({
     type: actionTypes.GET_LOAD_MORE_LIST,
     value: data.loadMoreList
-})
+});
 
 
 export const getTopicList = () => {
@@ -31,7 +31,7 @@ export const getTopicList = () => {
             console.log("error");
         });
     }
-}
+};
 
 
 export const getArticleList = () => {
@@ -43,7 +43,7 @@ export const getArticleList = () => {
             console.log("error");
         });
     }
-}
+};
 
 export const getRecommendList = () => {
     return (dispatch) => {
@@ -55,7 +55,7 @@ export const getRecommendList = () => {
             console.log("error");
         });
     }
-}
+};
 
 export const getLoadMoreList = () => {
     return (dispatch) => {
@@ -67,10 +67,10 @@ export const getLoadMoreList = () => {
             console.log("error");
         });
     }
-}
+};
 
 
 export const getChangeShowBackTopAction = (changeShowBackTop) => ({
     type: actionTypes.CHANGE_SHOW_BACK_TOP,
     value: changeShowBackTop
-})
+});

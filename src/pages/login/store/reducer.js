@@ -21,12 +21,12 @@ export default (state = defaultState, action) => {
         case actionTypes.LOGIN_SUCCESS:
             stateNew.loginBoolean = true;
             console.log("userName= " + stateNew.userName + ", password= " + stateNew.password);
-            break
+            break;
 
         case actionTypes.SIGN_OUT:
             stateNew.loginBoolean = false;
             stateNew.password="";
-            break
+            break;
 
         default:
             break
