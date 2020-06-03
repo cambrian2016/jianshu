@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
     return {};
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Write));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Write));
 
 
 
