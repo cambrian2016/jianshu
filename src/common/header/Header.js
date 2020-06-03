@@ -64,7 +64,10 @@ class Header extends Component {
                 <div className={style.nav}>
                     <div className={style.navHome + " " + style.NavItem}>首页</div>
                     <div className={style.navApp + " " + style.NavItem}>下载App</div>
-                    <div className={style.navLogin + " " + style.NavItem}>登录</div>
+                    {
+                        this.props.loginBoolean ? <div className={style.navLogin + " " + style.NavItem}>退出</div> :
+                            <Link to={"/login"}><div className={style.navLogin + " " + style.NavItem}>登录</div></Link>
+                    }
                     <div className={style.navAa + " " + style.NavItem}>
                         <img src={Aa} className={style.aaImage} alt="logo"/>
                     </div>
@@ -100,7 +103,8 @@ const mapStateToProps = (state) => {
         mouseIn: state.header.mouseIn,
         list: state.header.list,
         page: state.header.page,
-        totalPage: state.header.totalPage
+        totalPage: state.header.totalPage,
+        loginBoolean: state.login.loginBoolean
     }
 };
 
