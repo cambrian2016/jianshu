@@ -16,7 +16,7 @@ class List extends Component {
                 {
                     this.props.list.map((item) => {
                             return (
-                                <Link to={"/detail"} key={item.title}>
+                                <Link to={"/detail/"+item.id} key={item.title}>
                                     <div className={style.listItem}>
                                         <div className={style.listInfo}>
                                             <div className={style.listTitle}> {item.title}</div>

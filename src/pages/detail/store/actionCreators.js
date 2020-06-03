@@ -6,9 +6,9 @@ const getDetailAction = (data) => ({
     value: data
 })
 
-export const getDetail = () => {
+export const getDetail = (id) => {
     return (dispatch) => {
-        Axios.get("/api/detail.json").then((response) => {
+        Axios.get("/api/detail.json?id=" + id).then((response) => {
             const data = response.data;
             dispatch(getDetailAction(data.data));
         }).catch(() => {

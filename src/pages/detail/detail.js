@@ -2,11 +2,13 @@ import React, {Component} from "react";
 import style from './detail.module.css'
 import * as actionCreators from "../detail/store/actionCreators";
 import {connect} from "react-redux";
+import { withRouter } from 'react-router-dom'
 
 class Detail extends Component {
 
     componentDidMount() {
-        this.props.handleGetDetail();
+        console.log("this.props.match.params.id  =  "+this.props.match.params.id);
+        this.props.handleGetDetail(this.props.match.params.id);
     }
 
     render() {
@@ -22,19 +24,19 @@ class Detail extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        detail: state.detail.detail
+        detail: state.detail.detail,
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        handleGetDetail() {
-            dispatch(actionCreators.getDetail());
+        handleGetDetail(id) {
+            dispatch(actionCreators.getDetail(id));
         }
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Detail);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Detail));
 
 
 

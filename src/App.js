@@ -12,8 +12,8 @@ function App() {
             <BrowserRouter>
                 <div>
                     <Header/>
-                    <Route path="/" exact render={() => <Home/>}></Route>
-                    <Route path="/detail" exact render={() => <Detail/>}></Route>
+                    <Route path="/" exact component={() => <Home/>}></Route>
+                    <Route path="/detail/:id" exact component={() => <Detail/>}></Route>
                 </div>
             </BrowserRouter>
         </Provider>
