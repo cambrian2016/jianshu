@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import * as actionCreators from "./store/actionCreators";
+import * as loginActionCreators from "../../pages/login/store/actionCreators";
+
 
 import style from './header.module.css'
 
@@ -65,7 +67,7 @@ class Header extends Component {
                     <div className={style.navHome + " " + style.NavItem}>首页</div>
                     <div className={style.navApp + " " + style.NavItem}>下载App</div>
                     {
-                        this.props.loginBoolean ? <div className={style.navLogin + " " + style.NavItem}>退出</div> :
+                        this.props.loginBoolean ? <div className={style.navLogin + " " + style.NavItem} onClick={this.props.handleSignOut}>退出</div> :
                             <Link to={"/login"}><div className={style.navLogin + " " + style.NavItem}>登录</div></Link>
                     }
                     <div className={style.navAa + " " + style.NavItem}>
@@ -127,6 +129,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         handleMouseLeave() {
             dispatch(actionCreators.mouseLeaveAction());
+        },
+        handleSignOut(){
+            dispatch(loginActionCreators.signOutAction());
         }
 
     }

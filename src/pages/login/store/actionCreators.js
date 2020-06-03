@@ -31,4 +31,8 @@ export const login = (userName, password) => {
     }
 }
 
+export const signOutAction = () => ({
+    type: actionTypes.SIGN_OUT,
+})
+
 

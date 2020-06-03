@@ -3,7 +3,7 @@ import * as actionTypes from "./actionTypes"
 const defaultState = {
     loginBoolean: false,
     userName: "admin",
-    password: "123"
+    password: ""
 };
 
 export default (state = defaultState, action) => {
@@ -19,8 +19,13 @@ export default (state = defaultState, action) => {
             break;
 
         case actionTypes.LOGIN_SUCCESS:
-            stateNew.loginBoolean=true;
-            console.log("userName= "+stateNew.userName+", password= "+stateNew.password);
+            stateNew.loginBoolean = true;
+            console.log("userName= " + stateNew.userName + ", password= " + stateNew.password);
+            break
+
+        case actionTypes.SIGN_OUT:
+            stateNew.loginBoolean = false;
+            stateNew.password="";
             break
 
         default:
