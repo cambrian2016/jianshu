@@ -6,6 +6,7 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Home from "./pages/home/Home";
 import Detail from "./pages/detail/detail";
 import Login from "./pages/login/Login"
+import Write from "./pages/write/Write";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path="/" exact component={() => <Home/>}></Route>
                     <Route path="/login" exact component={() => <Login/>}></Route>
                     <Route path="/detail/:id" exact component={() => <Detail/>}></Route>
+                    <Route path="/write" exact component={() => <Write/>}></Route>
                 </div>
             </BrowserRouter>
         </Provider>

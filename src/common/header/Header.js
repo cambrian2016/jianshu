@@ -67,14 +67,16 @@ class Header extends Component {
                     <div className={style.navHome + " " + style.NavItem}>首页</div>
                     <div className={style.navApp + " " + style.NavItem}>下载App</div>
                     {
-                        this.props.loginBoolean ? <div className={style.navLogin + " " + style.NavItem} onClick={this.props.handleSignOut}>退出</div> :
-                            <Link to={"/login"}><div className={style.navLogin + " " + style.NavItem}>登录</div></Link>
+                        this.props.loginBoolean ? <div className={style.navLogin + " " + style.NavItem}
+                                                       onClick={this.props.handleSignOut}>退出</div> :
+                            <Link to={"/login"}>
+                                <div className={style.navLogin + " " + style.NavItem}>登录</div>
+                            </Link>
                     }
                     <div className={style.navAa + " " + style.NavItem}>
                         <img src={Aa} className={style.aaImage} alt="logo"/>
                     </div>
                     <div className={style.navSearch}>
-
                         <input className={(this.props.focused || this.props.mouseIn) ? style.searchFocus : style.search}
                                placeholder="搜索"
                                onFocus={this.props.handleInputFocus.bind(this, this.props.list)}
@@ -83,14 +85,15 @@ class Header extends Component {
 
                         {this.getSearchInfo()}
                     </div>
-
                 </div>
-                <div className={style.addition}>
-                    <button className={style.written + " " + style.button}>
-                        <img src={Pen} className={style.penImage} alt="logo"/>
-                        写文章
-                    </button>
 
+                <div className={style.addition}>
+                    <Link to={"/write"}>
+                        <button className={style.written + " " + style.button}>
+                            <img src={Pen} className={style.penImage} alt="logo"/>
+                            写文章
+                        </button>
+                    </Link>
                     <button className={style.register + " " + style.button}>注册</button>
                 </div>
             </div>
@@ -130,7 +133,7 @@ const mapDispatchToProps = (dispatch) => {
         handleMouseLeave() {
             dispatch(actionCreators.mouseLeaveAction());
         },
-        handleSignOut(){
+        handleSignOut() {
             dispatch(loginActionCreators.signOutAction());
         }
 
