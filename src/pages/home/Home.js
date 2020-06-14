@@ -6,7 +6,8 @@ import List from "./components/List";
 import Recommend from "./components/Recommend";
 import Writer from "./components/Writer";
 
-import homeBanner from "../../statics/banner.png"
+import homeBanner from "../../res/image/home_banner.jpg"
+
 import * as actionCreators from "./store/actionCreators";
 import {connect} from "react-redux";
 

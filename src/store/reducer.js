@@ -1,16 +1,16 @@
 import {combineReducers} from "redux";
 
-import headerReducer from '../common/header/store/reducer'
-import homeReducer from '../pages/home/store/reducer'
-import detailReducer from '../pages/detail/store/reducer'
-import loginReducer from '../pages/login/store/reducer'
+import {Reducer as headerReducer} from '../common/header'
+import {Reducer as homeReducer} from '../pages/home'
+import {Reducer as detailReducer} from '../pages/detail'
+import {Reducer as loginReducer} from '../pages/login'
 
 
 const reducer = combineReducers({
     header: headerReducer,
     home: homeReducer,
     detail: detailReducer,
-    login:loginReducer
+    login: loginReducer
 });
 
 export default reducer;

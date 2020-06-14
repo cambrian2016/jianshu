@@ -3,16 +3,14 @@ import {connect} from "react-redux";
 import * as actionCreators from "./store/actionCreators";
 import * as loginActionCreators from "../../pages/login/store/actionCreators";
 
-
 import style from './header.module.css'
-
-import logo from '../../statics/logo.png'
-import Aa from '../../statics/aa.png'
-import Magnifier from '../../statics/magnifier.png'
-import Pen from '../../statics/pen.png'
-import spin from '../../statics/spin.png'
 import {Link} from "react-router-dom";
 
+import mainLogo from "../../res/image/main_logo.png"
+import headerAa from "../../res/image/header_aa.png"
+import headerMagnifier from "../../res/image/header_magnifier.png"
+import headerPen from "../../res/image/header_pen.png"
+import headerSpin from "../../res/image/header_spin.png"
 
 class Header extends Component {
 
@@ -38,7 +36,7 @@ class Header extends Component {
                         热门搜索
                         <span className={style.searchInfoTitleSwitch}
                               onClick={this.props.handleChangeSearchInfo}>换一批</span>
-                        <div className={style.spinDiv}><img className={style.spinImg} src={spin}/></div>
+                        <div className={style.spinDiv}><img className={style.spinImg} src={headerSpin}/></div>
                     </div>
                     <div>
                         {
@@ -59,7 +57,7 @@ class Header extends Component {
             <div className={style.header}>
                 <Link to={"/"}>
                     <div className={style.logo}>
-                        <img src={logo} className={style.logoImage} alt="logo"/>
+                        <img src={mainLogo} className={style.logoImage} alt="logo"/>
                     </div>
                 </Link>
 
@@ -74,14 +72,14 @@ class Header extends Component {
                             </Link>
                     }
                     <div className={style.navAa + " " + style.NavItem}>
-                        <img src={Aa} className={style.aaImage} alt="logo"/>
+                        <img src={headerAa} className={style.aaImage} alt="logo"/>
                     </div>
                     <div className={style.navSearch}>
                         <input className={(this.props.focused || this.props.mouseIn) ? style.searchFocus : style.search}
                                placeholder="搜索"
                                onFocus={this.props.handleInputFocus.bind(this, this.props.list)}
                                onBlur={this.props.handleInputBlur}/>
-                        <img src={Magnifier} className={style.magnifierImage} alt="logo"/>
+                        <img src={headerMagnifier} className={style.magnifierImage} alt="logo"/>
 
                         {this.getSearchInfo()}
                     </div>
@@ -90,7 +88,7 @@ class Header extends Component {
                 <div className={style.addition}>
                     <Link to={"/write"}>
                         <button className={style.written + " " + style.button}>
-                            <img src={Pen} className={style.penImage} alt="logo"/>
+                            <img src={headerPen} className={style.penImage} alt="logo"/>
                             写文章
                         </button>
                     </Link>
